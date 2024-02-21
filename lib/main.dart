@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
-import 'package:cinemapedia/router/app_router.dart';
-import 'package:cinemapedia/theme/app_theme.dart';
+import 'package:cinemapedia/config/router/app_router.dart';
+import 'package:cinemapedia/config/theme/app_theme.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() => runApp(CinemaPedia());
+Future<void> main() async {
+  await dotenv.load(fileName: '.env');
+  runApp(
+    CinemaPedia(),
+  );
+}
 
 class CinemaPedia extends StatelessWidget {
   const CinemaPedia({super.key});
