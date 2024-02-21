@@ -1,4 +1,3 @@
-import 'package:cinemapedia/domain/datasources/movies_datasource.dart';
 import 'package:cinemapedia/domain/entities/movie.dart';
 
 // API Key: 11bedc47682621bc897dee14dfee40ce
