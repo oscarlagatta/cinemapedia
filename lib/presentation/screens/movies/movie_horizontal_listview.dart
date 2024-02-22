@@ -72,7 +72,7 @@ class _MovieHorizontalListviewState extends State<MovieHorizontalListview> {
 }
 
 class _Slide extends StatelessWidget {
-  const _Slide({super.key, required this.movie});
+  const _Slide({required this.movie});
 
   final Movie movie;
 
@@ -151,7 +151,7 @@ class _Slide extends StatelessWidget {
 }
 
 class _Title extends StatelessWidget {
-  const _Title({super.key, this.title, this.subTitle});
+  const _Title({this.title, this.subTitle});
 
   final String? title;
   final String? subTitle;
