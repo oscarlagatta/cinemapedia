@@ -6,4 +6,10 @@ import 'package:cinemapedia/domain/entities/movie.dart';
 // API request: https://api.themoviedb.org/3/movie/550?api_key=11bedc47682621bc897dee14dfee40ce
 abstract class MoviesRepository {
   Future<List<Movie>> getNowPlaying({int page = 1});
+
+  Future<List<Movie>> getPopular({int page = 1});
+
+  Future<List<Movie>> getUpcoming({int page = 1});
+
+  Future<List<Movie>> getTopRated({int page = 1});
 }

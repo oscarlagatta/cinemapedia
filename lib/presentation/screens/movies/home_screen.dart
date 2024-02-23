@@ -31,6 +31,10 @@ class _HomeViewState extends ConsumerState<_HomeView> {
     super.initState();
 
     ref.read(nowPlayingMoviesProvider.notifier).loadNextPage();
+    ref.read(popularMoviesProvider.notifier).loadNextPage();
+    ref.read(topRatedMoviesProvider.notifier).loadNextPage();
+    ref.read(upcomingMoviesProvider.notifier).loadNextPage();
+
   }
 
   @override
@@ -38,6 +42,9 @@ class _HomeViewState extends ConsumerState<_HomeView> {
     // Obtain the values of the provider.
     final nowPlayingMovies = ref.watch(nowPlayingMoviesProvider);
     final slideShowMovies = ref.watch(moviesSlideShowProvider);
+    final popularMovies = ref.watch(popularMoviesProvider);
+    final upcomingMovies = ref.watch(upcomingMoviesProvider);
+    final topRatedMovies= ref.watch(topRatedMoviesProvider);
 
     return CustomScrollView(slivers: [
       const SliverAppBar(
@@ -62,21 +69,20 @@ class _HomeViewState extends ConsumerState<_HomeView> {
               MovieHorizontalListview(
                 title: 'Upcoming',
                 subTitle: 'This Month!',
-                movies: nowPlayingMovies,
+                movies: upcomingMovies,
                 loadNextPage: () =>
-                    ref.read(nowPlayingMoviesProvider.notifier).loadNextPage(),
+                    ref.read(upcomingMoviesProvider.notifier).loadNextPage(),
               ),
               MovieHorizontalListview(
                 title: 'Popular',
-                // subTitle: 'Monday 20',
-                movies: nowPlayingMovies,
+                movies: popularMovies,
                 loadNextPage: () =>
-                    ref.read(nowPlayingMoviesProvider.notifier).loadNextPage(),
+                    ref.read(topRatedMoviesProvider.notifier).loadNextPage(),
               ),
               MovieHorizontalListview(
-                title: 'Best Rated',
+                title: 'Top Rated',
                 subTitle: 'All Time',
-                movies: nowPlayingMovies,
+                movies: topRatedMovies,
                 loadNextPage: () =>
                     ref.read(nowPlayingMoviesProvider.notifier).loadNextPage(),
               ),
