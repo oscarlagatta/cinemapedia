@@ -17,7 +17,7 @@ class MovieMapper {
       popularity: movieDB.popularity,
       posterPath: movieDB.posterPath != ''
           ? 'https://image.tmdb.org/t/p/w500/${movieDB.posterPath}'
-          : 'no-poster',
+          : 'https://www.movienewsletters.net/photos/000000H1.jpg',
       releaseDate: movieDB.releaseDate,
       title: movieDB.title,
       video: movieDB.video,
