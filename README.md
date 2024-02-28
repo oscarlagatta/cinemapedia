@@ -20,3 +20,8 @@ samples, guidance on mobile development, and a full API reference.
 
 1. Copy the .env.template y rename to .env
 2. Change environment variables (the MovieDb)
+3. Changes in the entity, we must run the following
+```
+ flutter pub run build_runner build
+
+```
